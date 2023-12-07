@@ -78,3 +78,38 @@ x==========x]
 [2023-12-07 14:37:56,067: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
 
 x==========x]
+[2023-12-07 15:28:47,065: INFO: common: YAML file: config/config.yaml loaded successfully]
+[2023-12-07 15:28:47,067: INFO: common: YAML file: params.yaml loaded successfully]
+[2023-12-07 15:28:47,068: INFO: common: created directory at: artifacts]
+[2023-12-07 15:28:47,069: INFO: common: created directory at: artifacts/training]
+[2023-12-07 16:01:39,906: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-07 16:01:39,908: INFO: common: YAML file: config/config.yaml loaded successfully]
+[2023-12-07 16:01:39,910: INFO: common: YAML file: params.yaml loaded successfully]
+[2023-12-07 16:01:39,910: INFO: common: created directory at: artifacts]
+[2023-12-07 16:01:39,910: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-12-07 16:01:39,910: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1z0mreUtRmR-P-magILsDR3T7M6IkGXtY/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-12-07 16:01:45,579: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1z0mreUtRmR-P-magILsDR3T7M6IkGXtY/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-12-07 16:01:46,048: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-07 16:01:46,049: INFO: main: *******************]
+[2023-12-07 16:01:46,049: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-12-07 16:01:46,051: INFO: common: YAML file: config/config.yaml loaded successfully]
+[2023-12-07 16:01:46,052: INFO: common: YAML file: params.yaml loaded successfully]
+[2023-12-07 16:01:46,052: INFO: common: created directory at: artifacts]
+[2023-12-07 16:01:46,052: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-12-07 16:01:46,632: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-12-07 16:01:46,782: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.SGD` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.SGD`.]
+[2023-12-07 16:01:46,785: WARNING: __init__: There is a known slowdown when using v2.11+ Keras optimizers on M1/M2 Macs. Falling back to the legacy Keras optimizer, i.e., `tf.keras.optimizers.legacy.SGD`.]
+[2023-12-07 16:01:46,910: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-12-07 16:01:46,911: INFO: main: *******************]
+[2023-12-07 16:01:46,911: INFO: main: >>>>>> stage Training started <<<<<<]
+[2023-12-07 16:01:46,914: INFO: common: YAML file: config/config.yaml loaded successfully]
+[2023-12-07 16:01:46,915: INFO: common: YAML file: params.yaml loaded successfully]
+[2023-12-07 16:01:46,915: INFO: common: created directory at: artifacts]
+[2023-12-07 16:01:46,915: INFO: common: created directory at: artifacts/training]
+[2023-12-07 16:03:03,325: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
