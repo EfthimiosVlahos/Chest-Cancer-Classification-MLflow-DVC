@@ -9,30 +9,61 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
+from yaml.parser import ParserError
+import logging
+
+logger = logging.getLogger(__name__)
 
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
-    """reads yaml file and returns
+    """
+    Reads a YAML file and returns its contents as a ConfigBox object.
 
     Args:
-        path_to_yaml (str): path like input
+        path_to_yaml (Path): Path object pointing to the YAML file.
 
     Raises:
-        ValueError: if yaml file is empty
-        e: empty file
+        ValueError: If the YAML file is empty or incorrectly formatted.
 
     Returns:
-        ConfigBox: ConfigBox type
+        ConfigBox: Parsed content of the YAML file.
     """
     try:
-        with open(path_to_yaml) as yaml_file:
+        with open(path_to_yaml, 'r') as yaml_file:
             content = yaml.safe_load(yaml_file)
-            logger.info(f"yaml file: {path_to_yaml} loaded successfully")
+            if content is None:
+                raise ValueError("YAML file is empty or incorrectly formatted")
+            logger.info(f"YAML file: {path_to_yaml} loaded successfully")
             return ConfigBox(content)
-    except BoxValueError:
-        raise ValueError("yaml file is empty")
-    except Exception as e:
-        raise e
+    except ParserError:
+        raise ValueError("Error parsing YAML file")
+    except Exception:
+        raise
+
+
+# @ensure_annotations
+# def read_yaml(path_to_yaml: Path) -> ConfigBox:
+#     """reads yaml file and returns
+
+#     Args:
+#         path_to_yaml (str): path like input
+
+#     Raises:
+#         ValueError: if yaml file is empty
+#         e: empty file
+
+#     Returns:
+#         ConfigBox: ConfigBox type
+#     """
+#     try:
+#         with open(path_to_yaml) as yaml_file:
+#             content = yaml.safe_load(yaml_file)
+#             logger.info(f"yaml file: {path_to_yaml} loaded successfully")
+#             return ConfigBox(content)
+#     except BoxValueError:
+#         raise ValueError("yaml file is empty")
+#     except Exception as e:
+#         raise e
     
 
 
