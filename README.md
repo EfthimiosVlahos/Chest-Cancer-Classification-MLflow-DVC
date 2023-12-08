@@ -130,8 +130,4 @@ By following these instructions, you should be able to set up, run, and deploy t
 
 
 
-## License
-
-
-## Contact
 
